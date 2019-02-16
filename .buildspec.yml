@@ -1,0 +1,36 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  install:
+    commands:
+      - npm install
+      # - command
+  pre_build:
+    commands:
+      - CI=true npm test
+      # - command
+  build:
+    commands:
+      - npm run build
+      # - command
+  #post_build:
+    #commands:
+      #zip -r build.zip dist/* 
+      # - command
+artifacts:
+  files:
+    - ./**/*
+    # - location
+  #discard-paths: yes
+  base-directory: build
+#cache:
+  #paths:
+    # - paths
